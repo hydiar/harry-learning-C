@@ -8,11 +8,10 @@ int main() {
     return 0;
 }
 
-int power(int base, int n) {
-    int i, p;
-
-    p = 1;
-    for (i = 1; i<=n; i++)
+int power(int base, int n) { //the value of n is called by value, not by reference. A local copy is used in power() function.
+    int p;
+    for(p = 1; n > 0; --n)
         p = p * base;
     return p;
+}
 }
