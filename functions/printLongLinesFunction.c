@@ -16,8 +16,6 @@ int main() {
 	char line[MAXLINE];
 	
 	char outputlines[MAXLINE][MAXSTOREDLINES];
-	//char totallines[MAXLINE*MAXSTOREDLINES+(MAXLINE-1)];
-	
 	
 	int linestoredcount;
 	int i;
@@ -27,18 +25,13 @@ int main() {
 			for (i = 0; i < MAXLINE; ++i) {
 				outputlines[i][linestoredcount] = line[i];
 			}
-		++linestoredcount;
 		}
+		++linestoredcount;
 	}
 	if (linestoredcount > 0) {
 		printf("Printing lines longer than %i:\n", THRESHOLD);
-		for (i = 0; i < MAXSTOREDLINES; ++i) {	
-			int j;
-			char currentprintstring[MAXLINE];
-			for (j = 0; j < MAXLINE; j++) {
-				currentprintstring[j] = outputlines[j][i];
-			}
-			printf("%s\n", currentprintstring);
+		for (i = 0; i < linestoredcount; ++i) {	
+			printf("%s", outputlines[i]);
 		}
 	}	
 	return 0;
