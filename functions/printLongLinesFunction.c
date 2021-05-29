@@ -8,9 +8,9 @@ int getline(char line[], int maxline);
 int main() {
 	int len;
 	char line[MAXLINELEN];
-	char output[MAXLINELEN][MAXLINES];
-	
+	char output[MAXLINELEN][MAXLINES];	
 	int linecount, i;
+
 	linecount = 0;
 	
 	printf("Please type an input. Inputs longer than %i will be printed back to you\n", THRESHOLD);
@@ -23,16 +23,14 @@ int main() {
 			++linecount;
 		}
 	}
-	int printcount = 0;
-	if (linecount > 0) {
+	if(linecount > 0) {
 		printf("Printing lines longer than %i:\n", THRESHOLD);
-		while (printcount < linecount) {
-			printf("%s", output[printcount]);
-			++printcount;
-		}
+		for (i = 0; i < linecount; ++i)
+			printf("%s", output[i]);
 	}
 	else
 		printf("There were no lines longer than %i:\n", THRESHOLD);
+
 	return 0;
 }
 
@@ -46,5 +44,6 @@ int getline(char s[], int lim) {
 		++i;
 	}
 	s[i] = '\0';
+	
 	return i;
 }
