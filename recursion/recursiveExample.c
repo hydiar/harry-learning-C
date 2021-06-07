@@ -21,7 +21,7 @@ int intbreak(int n) {						//Break integer into sum of parts > 2. Return highest
 	int k1, k2;
 	k1 = k2 = 0;
 	
-	if (n <= 2)						//Base case
+	if (n <= 2)						//Base case conditional
 		return 1;
 
 	prod = n - 1;
